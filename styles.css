@@ -1,0 +1,1067 @@
+/* =================================================
+   LIFE TOOL SUIT
+   MAIN STYLES
+================================================= */
+
+
+/* =================================================
+   VARIABLES
+================================================= */
+
+:root {
+
+    --blue: #0044c9;
+    --blue-dark: #00359f;
+    --blue-light: #eef4ff;
+
+    --text: #172033;
+    --text-soft: #657083;
+    --text-light: #8b95a5;
+
+    --background: #ffffff;
+    --background-soft: #f7f9fc;
+
+    --border: #e4e8ef;
+
+    --shadow:
+        0 20px 50px rgba(20, 35, 65, 0.10);
+
+    --radius: 16px;
+
+    --max-width: 1120px;
+}
+
+
+/* =================================================
+   RESET
+================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+
+    background: var(--background);
+
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =================================================
+   HEADER
+================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.header-inner {
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    transition:
+        opacity 0.2s ease;
+}
+
+
+.brand:hover {
+    opacity: 0.85;
+}
+
+
+.logo {
+    display: block;
+
+    width: auto;
+
+    height: 42px;
+
+    max-width: 210px;
+
+    object-fit: contain;
+}
+
+
+.main-nav {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.main-nav a {
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.main-nav a:hover {
+    color: var(--blue);
+}
+
+
+/* =================================================
+   HERO
+================================================= */
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f7ff 0%,
+            #ffffff 55%,
+            #f7f9fc 100%
+        );
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -160px;
+    top: -220px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    opacity: 0.06;
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    left: -150px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    opacity: 0.05;
+}
+
+
+.hero-inner {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+
+    margin: 0 auto;
+
+    padding:
+        110px 0 120px;
+}
+
+
+.eyebrow,
+.section-eyebrow,
+.modal-eyebrow {
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.eyebrow {
+    margin-bottom: 18px;
+}
+
+
+.hero h1 {
+    max-width: 760px;
+
+    font-size:
+        clamp(42px, 6vw, 72px);
+
+    line-height: 1.04;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 800;
+}
+
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+
+.hero-description {
+    max-width: 620px;
+
+    margin-top: 26px;
+
+    color: var(--text-soft);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+.hero-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 36px;
+
+    padding:
+        15px 22px;
+
+    color: #ffffff;
+
+    background: var(--blue);
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(0, 68, 201, 0.20);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.hero-button:hover {
+    background: var(--blue-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 68, 201, 0.25);
+}
+
+
+.hero-button span {
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* =================================================
+   RESOURCES SECTION
+================================================= */
+
+.resources-section {
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+
+    margin: 0 auto;
+
+    padding:
+        90px 0 110px;
+}
+
+
+.section-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 34px;
+}
+
+
+.section-eyebrow {
+    margin-bottom: 8px;
+}
+
+
+.section-header h2 {
+    font-size:
+        clamp(30px, 4vw, 44px);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+}
+
+
+.resource-count {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+
+/* =================================================
+   RESOURCE GRID
+================================================= */
+
+.resource-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =================================================
+   RESOURCE CARD
+================================================= */
+
+.resource-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 390px;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 5px 20px rgba(20, 35, 65, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.resource-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(0, 68, 201, 0.25);
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.resource-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 25px;
+
+    color: var(--blue);
+
+    background: var(--blue-light);
+
+    border-radius: 13px;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+.resource-type {
+    margin-bottom: 8px;
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+.resource-card h3 {
+    color: var(--text);
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.025em;
+}
+
+
+.resource-card-description {
+    margin-top: 14px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =================================================
+   DOWNLOAD BUTTON
+================================================= */
+
+.download-button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: auto;
+
+    padding:
+        18px 0 2px;
+
+    color: var(--blue);
+
+    background: transparent;
+
+    border: 0;
+
+    border-top:
+        1px solid var(--border);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.download-button:hover {
+    color: var(--blue-dark);
+}
+
+
+.download-button .arrow {
+    font-size: 20px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.download-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* =================================================
+   FOOTER
+================================================= */
+
+.site-footer {
+    background: #f7f9fc;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.footer-inner {
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+
+    min-height: 130px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.footer-logo {
+    display: block;
+
+    width: auto;
+
+    height: 52px;
+
+    max-width: 240px;
+
+    object-fit: contain;
+}
+
+
+.footer-brand p {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+.copyright {
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    text-align: right;
+}
+
+
+/* =================================================
+   EMAIL MODAL
+================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        rgba(14, 25, 45, 0.62);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+.modal.is-open {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.modal-box {
+    position: relative;
+
+    width: min(
+        100%,
+        470px
+    );
+
+    padding: 38px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 80px rgba(10, 25, 55, 0.25);
+
+    transform:
+        translateY(15px);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.modal.is-open .modal-box {
+    transform:
+        translateY(0);
+}
+
+
+.modal-close {
+    position: absolute;
+
+    top: 17px;
+    right: 19px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--text-light);
+
+    background: transparent;
+
+    border: 0;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.modal-close:hover {
+    color: var(--text);
+}
+
+
+.modal-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 10px;
+}
+
+
+.modal-box h2 {
+    font-size: 30px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.03em;
+}
+
+
+.modal-description {
+    margin-top: 12px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.modal-description strong {
+    color: var(--text);
+}
+
+
+/* =================================================
+   FORM
+================================================= */
+
+#emailForm {
+    margin-top: 27px;
+}
+
+
+.form-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+#emailInput {
+    width: 100%;
+
+    height: 50px;
+
+    padding:
+        0 15px;
+
+    color: var(--text);
+
+    background: #ffffff;
+
+    border:
+        1px solid #d9dee7;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#emailInput:focus {
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(0, 68, 201, 0.10);
+}
+
+
+#emailInput::placeholder {
+    color: #a1a9b5;
+}
+
+
+/* =================================================
+   CONSENT
+================================================= */
+
+.consent {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-top: 17px;
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+
+.consent input {
+    flex: 0 0 auto;
+
+    width: 15px;
+    height: 15px;
+
+    margin-top: 1px;
+
+    accent-color: var(--blue);
+
+    cursor: pointer;
+}
+
+
+/* =================================================
+   SUBMIT BUTTON
+================================================= */
+
+.submit-button {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 22px;
+
+    color: #ffffff;
+
+    background: var(--blue);
+
+    border: 0;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.submit-button:hover:not(:disabled) {
+    background: var(--blue-dark);
+
+    transform: translateY(-1px);
+}
+
+
+.submit-button:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+
+/* =================================================
+   FORM STATUS
+================================================= */
+
+.form-status {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    color: #b42318;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 850px) {
+
+    .resource-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    .header-inner {
+        width:
+            calc(100% - 32px);
+
+        min-height: 68px;
+    }
+
+
+    .logo {
+        height: 36px;
+
+        max-width: 175px;
+    }
+
+
+    .hero-inner {
+        width:
+            calc(100% - 32px);
+
+        padding:
+            75px 0 85px;
+    }
+
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    .resources-section {
+        width:
+            calc(100% - 32px);
+
+        padding:
+            65px 0 80px;
+    }
+
+
+    .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .resource-card {
+        min-height: 360px;
+    }
+
+
+    .modal {
+        padding: 16px;
+    }
+
+
+    .modal-box {
+        padding: 32px 25px;
+    }
+
+
+    .footer-inner {
+        width:
+            calc(100% - 32px);
+
+        padding:
+            30px 0;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .copyright {
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+
+    .modal-box {
+        padding:
+            30px 20px;
+    }
+
+}
